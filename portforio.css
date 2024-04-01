@@ -1,0 +1,279 @@
+@charset "utf-8";
+html {
+    font-size: 100%;
+}
+body {
+    color: #f6f7f8;
+    font-size: 16px;
+    background-image: radial-gradient(circle, #254449, #375a5b, #4b716c, #63887c, #7ea08c, #83a28a, #88a488, #8ea686, #7c9472, #6b825e, #5b714b, #4b6039);
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    font-weight: lighter;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/*リンク先カラー*/
+a {
+    text-decoration: none;
+    color: #f6f7f8;
+    font-weight: bold;
+}
+/*画像設定*/
+img {
+    max-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+li {
+    list-style: none;
+}
+/*sec-title.共通*/
+.sec_title {
+    padding: 100px 0 50px 0;
+    font-size: 3rem;
+    font-weight: bold;
+    display: inline-block;
+}
+/*コンテンツ共通*/
+.wrapper {
+    max-width: 1080px;
+    padding: 0 4%;
+    margin: 0 auto;
+}
+.container {
+    text-align: center;
+    padding: 70px 0 20px 0;
+}
+/*------ ハンバーガーメニュー ------*/
+.hamburger {
+/*768px以下より表示する*/
+    display: none;
+    position: fixed;
+    top: 16px; /*(初期25px)*/
+    right: 60px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: .5s;
+    z-index: 50;
+}
+.hamburger.open {
+    opacity: 1;
+}	
+/*ボタン内側*/
+.hamburger span {
+    position: absolute;
+    display: block;
+    transition: all .5s;/*アニメーションの設定*/ 
+    left: 0;
+    width: 30px;
+    height: 1px;
+    border-radius: 5px;
+    background-color: #f6f7f8;
+}
+/*一本目*/
+.hamburger span:nth-of-type(1) {
+    top: 4px;
+}
+/*二本目*/
+.hamburger span:nth-of-type(2) {
+    top: 14px;
+}
+/*三本目*/
+.hamburger span:nth-of-type(3) {
+    bottom: 5px;   
+}
+/*activeクラスが付与されると線が回転して×に*/
+.hamburger.active span:nth-of-type(1) {
+    top: 7px;
+    left: 1px;
+    transform: translateY(5px) rotate(-315deg);
+    background-color: #f6f7f8;
+}
+.hamburger.active span:nth-of-type(3) {
+    top: 17px;
+    left: 1px;
+    transform: translateY(-5px) rotate(315deg);
+    background-color: #f6f7f8;
+}
+/*１本目、３本目クロス、２本目表示しない*/
+.hamburger.active span:nth-of-type(2) {
+    display: none;
+}
+/*------------------------------------
+--------------- header ---------------
+------------------------------------*/
+#header {
+    background-color: #254449;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 20;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+}
+#header #nav {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+#header .logo {
+    flex-basis: auto;
+    height: 70px;
+    width: 70px;
+}
+#nav .nav_menu {
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#nav .nav-menu li {
+    margin-left: 34px;
+}
+/*------------------------------------
+--------------- top-btn --------------
+------------------------------------*/
+/*- スクロール700pxで表示、hoverでトップへ戻る -*/
+.top_btn .btn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 25px;
+    right: 25px;
+    border-radius: 50%;
+    background-color: #254449;
+    border: solid 1px #f6f7f8;
+    z-index: 60;
+}
+.top_btn .btn::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 9px;
+    clip-path: polygon(0 200%, 50% 0, 100% 200%);
+    background-color: #f6f7f8;
+    height: 12px;
+    width: 30px;
+}
+.top_btn {
+    opacity: 0;
+    visibility: hidden;
+}
+.top_btn.jump {
+    opacity: 1;
+    visibility: visible;
+}
+/*------------------------------------
+-------------- products --------------
+------------------------------------*/
+.portforio .pf_unit {
+    padding: 0 100px;
+}
+.portforio .pf_text {
+    text-align: left;
+    margin-top: 20px;
+}
+.portforio .pf_text p {
+    padding-top: 10px;
+}
+.portforio .pf_link {
+    margin-top: 10px;
+}
+.portforio .pf_text h4::after {
+    content: '';
+    background: #254449;
+    width: 150px;
+    height: 2px;
+    display: block;
+}
+/*------------------------------------
+------------- web全体画像 -------------
+------------------------------------*/
+.pc_img {
+    padding: 50px 300px;
+}
+.pc_img img {
+    box-shadow: 0 0 2px 2px #63887c;
+}
+/*------------------------------------
+-------- ブレークポイント.768px --------
+------------------------------------*/
+@media screen and (max-width: 768px) {
+    /*--------------- 共通 -------------*/
+    .sec_title {
+        padding: 50px 0 50px 0;
+        font-size: 2rem;
+    }
+    /*--- 768pxからhamburger表示 ---*/
+    .hamburger {
+        display: block;
+    }
+    /*-------------- header ------------*/
+    #header {
+        height: 60px;
+    }
+    #header .logo {
+        width: 60px;
+        height: 60px;
+    }
+    #nav .nav_menu {
+        flex-direction: column;
+        text-align: left;
+        margin-top: 60px;
+        line-height: 3;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    /*--- nav_menu.open-close active時表示 ---*/
+    /*メニューリストのCSS【クリック前】*/
+    #header .nav_menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 50vh;
+        background-color: #254449;
+        opacity: 0;
+        overflow-y: auto;
+        transition: 0.8s ease, visibility 0.6s ease;
+        visibility: hidden;
+        z-index: 40;
+    }
+    /*active時はnav_menu表示*/
+    #header .nav_menu.active {
+        opacity: 1;
+        visibility: visible;
+        right: 0;
+    }
+    .container {
+        padding-top: 60px;
+    }
+    /*---------- portfolio ----------*/
+    .portforio .pf_unit {
+        padding: 0 50px;
+    }
+    /*---------- web全体画像 ----------*/
+    .pc_img {
+        padding: 50px 200px;
+    }
+}
+/*------------------------------------
+-------- ブレークポイント.425px --------
+------------------------------------*/
+@media screen and (max-width: 425px) {
+    /*--------------- 共通 -------------*/
+    .hamburger {
+        right: 20px;
+    }
+    /*---------- portfolio ----------*/
+    .portforio .pf_unit {
+        padding: 0;
+    }
+    /*---------- web全体画像 ----------*/
+    .pc_img {
+        padding: 50px 50px;
+    }
+}
