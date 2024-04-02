@@ -169,20 +169,20 @@ li {
 /*------------------------------------
 -------------- products --------------
 ------------------------------------*/
-.portforio .pf_unit {
+.portfolio .pf_unit {
     padding: 0 100px;
 }
-.portforio .pf_text {
+.portfolio .pf_text {
     text-align: left;
     margin-top: 20px;
 }
-.portforio .pf_text p {
+.portfolio .pf_text p {
     padding-top: 10px;
 }
-.portforio .pf_link {
+.portfolio .pf_link {
     margin-top: 10px;
 }
-.portforio .pf_text h4::after {
+.portfolio .pf_text h4::after {
     content: '';
     background: #254449;
     width: 150px;
