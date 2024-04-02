@@ -169,34 +169,28 @@ li {
 /*------------------------------------
 -------------- products --------------
 ------------------------------------*/
-.portfolio .pf_unit {
+.products .pd_title {
+    font-size: 1.75rem;
+    margin-bottom: 25px;
+}
+.products .pd_unit {
     padding: 0 100px;
 }
-.portfolio .pf_text {
-    text-align: left;
-    margin-top: 20px;
+.products .pd_img {
+    margin-bottom: 100px;
 }
-.portfolio .pf_text p {
-    padding-top: 10px;
-}
-.portfolio .pf_link {
-    margin-top: 10px;
-}
-.portfolio .pf_text h4::after {
-    content: '';
-    background: #254449;
-    width: 150px;
-    height: 2px;
-    display: block;
-}
-/*------------------------------------
-------------- web全体画像 -------------
-------------------------------------*/
-.pc_img {
-    padding: 50px 300px;
-}
-.pc_img img {
+.products .pd_img img {
+    border-radius: 25px;
     box-shadow: 0 0 2px 2px #63887c;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform .6s ease; /* ゆっくり変化させる */
+}
+.products .pd_img img:hover {
+    transform: scale(1.1); /* 拡大 */
+}
+.products .pd_link {
+    padding-top: 10px;
 }
 /*------------------------------------
 -------- ブレークポイント.768px --------
@@ -251,14 +245,6 @@ li {
     .container {
         padding-top: 60px;
     }
-    /*---------- portfolio ----------*/
-    .portforio .pf_unit {
-        padding: 0 50px;
-    }
-    /*---------- web全体画像 ----------*/
-    .pc_img {
-        padding: 50px 200px;
-    }
 }
 /*------------------------------------
 -------- ブレークポイント.425px --------
@@ -268,12 +254,8 @@ li {
     .hamburger {
         right: 20px;
     }
-    /*---------- portfolio ----------*/
-    .portforio .pf_unit {
+    /*----------- products -----------*/
+    .products .pd_unit {
         padding: 0;
-    }
-    /*---------- web全体画像 ----------*/
-    .pc_img {
-        padding: 50px 50px;
     }
 }
