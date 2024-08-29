@@ -227,7 +227,7 @@ li {
 #skills .sk_unit {
     display: grid;
     gap: 60px;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 #skills .sk_inner {
     padding: 10px 15px;
@@ -257,7 +257,7 @@ li {
 #products .pr_unit {
     display: grid;
     gap: 60px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 2fr);
 }
 #products .pr_inner {
     padding: 20px 10px 0 10px;
